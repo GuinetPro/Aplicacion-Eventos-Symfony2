@@ -1,0 +1,18 @@
+parameters:
+#    event.example.class: Yoda\EventBundle\Example
+
+services:
+    event_report_manager:
+        class: Yoda\EventBundle\Reporting\EventReportManager
+        arguments: ["@doctrine.orm.entity_manager", "@router"]
+    twig.event_extension:
+        class: Yoda\EventBundle\Twig\EventExtension
+        arguments: []
+    yoda_event.twig.event_extension:
+        class: Yoda\EventBundle\Twig\EventExtension
+        arguments: []
+        tags:
+            - { name: twig.extension }
+#    event.example:
+#        class: %event.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

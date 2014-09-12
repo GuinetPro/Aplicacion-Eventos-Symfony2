@@ -1,0 +1,10 @@
+{% block body %}
+    {# existing <section> ... #}
+
+	<section class="events">
+	    {{ render(controller('EventBundle:Event:_upcomingEvents', {
+	        'max': 1
+	    })) }}
+	</section>
+	
+{% endblock %}
